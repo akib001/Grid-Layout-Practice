@@ -1,41 +1,114 @@
-.card {
-    max-width: 400px;
-    font-family: 'Inter', sans-serif;
-    box-shadow: 0 0 30px #f9f9f9;
-    border-radius: 30px;
-    overflow: hidden;
-    transform: rotate(-5deg);
-    margin: 2rem;
+*,
+html {
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.card:hover {
-    transform: scale(1.15);
-    transition: .5s ease;
-    cursor: pointer;
+.header__container {
+  display: grid;
+  border: 1px solid #000;
+  grid-template-columns: auto 70% auto auto;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 1px;
+  background-color: #000;
+  padding: 0;
+  height: 30vh;
 }
 
-
-footer {
-    background: rgb(116,214,144);
-    background: linear-gradient(90deg, rgba(116,214,144,1) 0%, rgba(92,191,187,1) 35%, rgba(0,212,255,1) 100%);
-    display: flex;
-    align-items: center;
+.header {
+  grid-column: 1/-1;
 }
 
-.text-container {
-    padding: 1rem;
-    font-weight: 500;
+.desktop {
+  grid-column: 1/-1;
 }
 
-img {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    border: 4px solid white;
-    margin: 1rem 1rem 1rem 2.2rem;
+.header__container > div {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.profile-name {
-    color: white;
-    font-weight: 550;
+.main__container {
+  display: grid;
+  border: 1px solid #000;
+  border-top: none;
+  grid-template-columns: auto 50% auto;
+  grid-template-rows: auto auto auto 40%;
+  grid-template-areas: 
+  'home text banner' 
+  'about content banner' 
+  'contact content banner' 
+  'document content banner';
+  background-color: #000;
+  grid-gap: 1px;
+  height: 60vh;
+}
+
+.main__container > div {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home {
+    grid-area: home;
+}
+
+.text {
+    grid-area: text;
+}
+
+.banner {
+    grid-area: banner;
+}
+
+.about {
+    grid-area: about;
+}
+
+.content {
+    grid-area: content;
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.document {
+    grid-area: document;
+}
+
+.footer__container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: "facebook github" "footer footer";
+    background-color: #000;
+    border: 1px solid #000;
+    border-top: none;
+    grid-gap: 1px;
+    height: 10vh;
+}
+
+.footer__container > div {
+ background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.facebook__link {
+    grid-area: facebook;
+}
+
+.github__link {
+    grid-area: github;
+}
+
+.footer {
+    grid-area: footer;
 }
