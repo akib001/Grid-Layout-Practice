@@ -1,0 +1,114 @@
+*,
+html {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header__container {
+  display: grid;
+  border: 1px solid #000;
+  grid-template-columns: auto 70% auto auto;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 1px;
+  background-color: #000;
+  padding: 0;
+  height: 30vh;
+}
+
+.header {
+  grid-column: 1/-1;
+}
+
+.desktop {
+  grid-column: 1/-1;
+}
+
+.header__container > div {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__container {
+  display: grid;
+  border: 1px solid #000;
+  border-top: none;
+  grid-template-columns: auto 50% auto;
+  grid-template-rows: auto auto auto 40%;
+  grid-template-areas: 
+  'home text banner' 
+  'about content banner' 
+  'contact content banner' 
+  'document content banner';
+  background-color: #000;
+  grid-gap: 1px;
+  height: 60vh;
+}
+
+.main__container > div {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home {
+    grid-area: home;
+}
+
+.text {
+    grid-area: text;
+}
+
+.banner {
+    grid-area: banner;
+}
+
+.about {
+    grid-area: about;
+}
+
+.content {
+    grid-area: content;
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.document {
+    grid-area: document;
+}
+
+.footer__container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: "facebook github" "footer footer";
+    background-color: #000;
+    border: 1px solid #000;
+    border-top: none;
+    grid-gap: 1px;
+    height: 10vh;
+}
+
+.footer__container > div {
+ background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.facebook__link {
+    grid-area: facebook;
+}
+
+.github__link {
+    grid-area: github;
+}
+
+.footer {
+    grid-area: footer;
+}

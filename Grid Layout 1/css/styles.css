@@ -4,111 +4,105 @@ html {
   box-sizing: border-box;
 }
 
-.header__container {
+.wrapper {
   display: grid;
   border: 1px solid #000;
-  grid-template-columns: auto 70% auto auto;
-  grid-template-rows: auto 1fr auto;
-  grid-gap: 1px;
+  /* This background color is for 1px border. When I set every div background to white and grid gap to 1px. This black background will replace 1px grid gap and acts like a inner border */
   background-color: #000;
-  padding: 0;
-  height: 30vh;
+  gap: 1px;
+  grid-template-columns: repeat(12, 1fr);
+  /* row 2 and row 7 will take 15% and 25% of total height and rest of the width will be equally devided to other 7 row because I used auto for them*/
+  grid-template-rows: auto 15% auto auto auto auto 25% auto auto;
+  height: 100vh;
 }
 
+.wrapper > div {
+  background-color: white;
+  /* Flex has been used to put items vertically and horizontally centered */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 13 means it will take 1 to 12 column. Ends before 13 */
 .header {
-  grid-column: 1/-1;
+  grid-column: 1 / 13;
+  grid-row: 1;
+}
+
+.logo {
+  grid-column: 1 / 3;
+  grid-row: 2;
+}
+
+.path {
+  grid-column: 3 / 9;
+  grid-row: 2;
+}
+
+.facebook {
+  grid-column: 9 / 11;
+  grid-row: 2;
+}
+
+.gmail {
+  grid-column: 11 / 13;
+  grid-row: 2;
 }
 
 .desktop {
-  grid-column: 1/-1;
-}
-
-.header__container > div {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main__container {
-  display: grid;
-  border: 1px solid #000;
-  border-top: none;
-  grid-template-columns: auto 50% auto;
-  grid-template-rows: auto auto auto 40%;
-  grid-template-areas: 
-  'home text banner' 
-  'about content banner' 
-  'contact content banner' 
-  'document content banner';
-  background-color: #000;
-  grid-gap: 1px;
-  height: 60vh;
-}
-
-.main__container > div {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  grid-column: 1 / 13;
+  grid-row: 3;
 }
 
 .home {
-    grid-area: home;
+  grid-column: 1 /  3;
+  grid-row: 4;
 }
 
 .text {
-    grid-area: text;
+  grid-column: 3 /  9;
+  grid-row: 4;
 }
 
 .banner {
-    grid-area: banner;
+  grid-column: 9 / 13;
+  grid-row: 4 / 8;
 }
 
 .about {
-    grid-area: about;
+  grid-column: 1 / 3;
+  grid-row: 5;
 }
 
 .content {
-    grid-area: content;
+  grid-column: 3 / 9;
+  grid-row: 5 / 8;
 }
 
 .contact {
-    grid-area: contact;
+  grid-column: 1 / 3;
+  grid-row: 6;
 }
 
 .document {
-    grid-area: document;
-}
-
-.footer__container {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1fr);
-    grid-template-areas: "facebook github" "footer footer";
-    background-color: #000;
-    border: 1px solid #000;
-    border-top: none;
-    grid-gap: 1px;
-    height: 10vh;
-}
-
-.footer__container > div {
- background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  grid-column: 1 / 3;
+  grid-row: 7;
 }
 
 .facebook__link {
-    grid-area: facebook;
+  grid-column: 1 / 7;
+  grid-row: 8;
 }
 
 .github__link {
-    grid-area: github;
+  grid-column: 7 / 13;
+  grid-row: 8;
 }
 
+
 .footer {
-    grid-area: footer;
+  grid-column: 1 / 13;
+  grid-row: 9;
 }
+
